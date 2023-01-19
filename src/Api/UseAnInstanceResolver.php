@@ -10,7 +10,7 @@ use Throwable;
 use UnderflowException;
 
 /**
- * permet d'utiliser la méthode 'resolve'
+ * Permet d'utiliser la méthode 'resolve'
  */
 trait UseAnInstanceResolver
 {
@@ -41,7 +41,7 @@ trait UseAnInstanceResolver
             $autowiring = $this->autowiring;
             return $autowiring($needle);
         } catch (Throwable $e) {
-            throw new RuntimeException("Impossible de résoudre " . $needle, $e->getCode(), $e);
+            throw new RuntimeException("Impossible de résoudre " . $needle  . " : " . $e->getMessage(), $e->getCode(), $e);
         }
     }
 }
